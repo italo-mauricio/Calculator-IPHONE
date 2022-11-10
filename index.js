@@ -2,7 +2,8 @@ const numbers = document.querySelectorAll('.numbers');
 const result = document.querySelector('.result span');
 const signs = document.querySelectorAll('.sign');
 const equals = document.querySelector('.equals');
-const clear = document.querySelector('.negative');
+const clear = document.querySelector('.clear');
+const negative = document.querySelector('.negative');
 const percent = document.querySelector('.percent')
 
 
@@ -100,4 +101,17 @@ percent.addEventListener('click', () => {
         resultValue = resultValue / 100;
     }
     result.innerHTML = resultValue;
+})
+
+
+ clear.addEventListener('click', () => {
+    result.innerHTML = 0;
+
+    firstValue = "";
+    isFirstValue = false;
+    secondValue = "";
+    isSecondValue = false;
+    sign = "";
+    resultValue = 0;
+      
 })
