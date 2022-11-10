@@ -15,6 +15,7 @@ let sign = "";
 let resultValue = 0;
 
 for (let i=0; i < numbers.length; i++){
+
     numbers[i].addEventListener('click', (e) => {
         let atr = e.target.getAttribute('value');
         if(isFirstValue === false) {
@@ -27,13 +28,17 @@ for (let i=0; i < numbers.length; i++){
 }
 
 function getFirstValue(el){
+
     result.innerHTML = "";
     firstValue += el;
     result.innerHTML = firstValue;
     firstValue = +firstValue;
 }
 
+
+
 function getSecondValue(el){
+
     if (firstValue != "" && sign != ""){
         secondValue += el;
         result.innerHTML = secondValue;
@@ -41,7 +46,9 @@ function getSecondValue(el){
     }
 }
 
+
 function getSign(){
+
     for(let i = 0; i < signs.length; i++ ){
         signs[i].addEventListener('click', (e) =>{
             sign = e.target.getAttribute('value');
@@ -50,8 +57,9 @@ function getSign(){
     }
 }
 
-getSign();
 
+
+getSign();
 equals.addEventListener('click', () => {
     result.innerHTML = "";
     if (sign === "+") {
@@ -70,6 +78,7 @@ equals.addEventListener('click', () => {
 
 
 function checkResultLength(){
+    
     resultValue = JSON.stringify(resultValue);
 
     if (resultValue.length >= 8) {
