@@ -20,7 +20,7 @@ for (let i=0; i < numbers.length; i++){
             getFirstValue(atr)
         }
         if(isSecondValue == false){
-            getFirstValue(atr);
+            getSecondValue(atr);
         }
     })
 }
