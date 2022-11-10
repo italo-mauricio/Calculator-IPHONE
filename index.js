@@ -1,7 +1,7 @@
 const numbers = document.querySelectorAll('.numbers');
 const result = document.querySelector('.result span');
 const signs = document.querySelectorAll('.sign');
-const equals = document.querySelector('equals');
+const equals = document.querySelector('.equals');
 const clear = document.querySelector('.negative');
 const percent = document.querySelector('.percent')
 
@@ -51,17 +51,53 @@ function getSign(){
 
 getSign();
 
-equals.addEventListener('click', ()=> {
+equals.addEventListener('click', () => {
     result.innerHTML = "";
     if (sign === "+") {
         resultValue = firstValue + secondValue;
-
     }else if (sign === "-") {
         resultValue = firstValue - secondValue;
     }else if (sign === "x") {
         resultValue = firstValue * secondValue;
     }else if (sign === "/") {
         resultValue = firstValue / secondValue;
+    }
+    result.innerHTML = resultValue;
+    firstValue = resultValue;
+    secondValue = "";
+})
+
+
+function checkResultLength(){
+    resultValue = JSON.stringify(resultValue);
+
+    if (resultValue.length >= 8) {
+        resultValue = JSON.parse(resultValue);
+        result.innerHTML = resultValue.toFixed(5);
+    }
+}
+
+
+negative.addEventListener('click', () => {
+    result.innerHTML ="";
+    if(firstValue != "") {
+        resultValue = -firstValue;
+        firstValue = resultValue;
+    }
+    if(firstValue != "" && secondValue != "" && sign != ""){
+        resultValue = -resultValue;
+    }
+    result.innerHTML = resultValue;
+})
+
+percent.addEventListener('click', () => {
+    result.innerHTML = "";
+    if(firstValue != "") {
+        resultValue = firstValue / 100;
+        firstValue = resultValue;
+    }
+    if(firstValue != "" && secondValue != "" && sign != ""){
+        resultValue = resultValue / 100;
     }
     result.innerHTML = resultValue;
 })
