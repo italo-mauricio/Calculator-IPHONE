@@ -3,7 +3,7 @@
 
 Personal project developed for JavaScript, HTML and CSS training.
 
-Link para a calculadora: https://italo-mauricio.github.io/Calculator-IPHONE/
+Link para a calculadora: https://italo-mauricio.github.io/Calculator-IPHONE/ (recomendo utilizar o formato IPHONE XR do navegador)
 
 ## Languages:
 
